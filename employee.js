@@ -1,4 +1,4 @@
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzzQdhaqoHhpWhvqrIddEKXwu-D82RWfLAZH3sK82IF97XRZGRLfRNl0OkekZ_eENY_Yg/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyAPDocGC-_GTdp1DHxLHKB3YdKZt_N3TGRkmbYks3rCm3aUrRDTs9NDaaXVcebzuGW/exec';
 const messageContainer = document.getElementById('message-container');
 
 // ฟังก์ชันสำหรับจัดรูปแบบตัวเลขให้มีเครื่องหมายจุลภาค (,)
@@ -8,17 +8,19 @@ function formatNumber(num) {
 }
 
 // ฟังก์ชันสำหรับแสดงข้อความแจ้งเตือน
-function showMessage(message, type) {
+function showMessage(message, type, isPermanent = false) {
     messageContainer.innerHTML = `<div class="message ${type}">${message}</div>`;
     messageContainer.style.display = 'block';
 
-    // เพิ่มโค้ดส่วนนี้เพื่อตั้งเวลาให้ข้อความหายไป
-    if (type !== 'system-closed') { // ตรวจสอบว่าไม่ใช่ข้อความระบบปิด
+    // ถ้าไม่ใช่ข้อความที่ต้องการให้แสดงค้างไว้ จะตั้งเวลาให้หายไปเอง
+    if (!isPermanent) {
         setTimeout(() => {
             messageContainer.style.display = 'none';
-        }, 2000); // 2000 มิลลิวินาที = 3 วินาที
+        }, 2000); // 2000 มิลลิวินาที = 2 วินาที
     }
 }
+
+
 
 // ฟังก์ชันสำหรับสลับหน้าจอ
 function switchScreen(screenId) {
@@ -236,7 +238,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             login();
         }
     } else if (systemStatus === 'Close') {
-        showMessage('ระบบอยู่ในระหว่างการปรับปรุง กรุณารอประกาศจากฝ่ายที่เกี่ยวข้อง', 'error');
+        // แก้ไขส่วนนี้: เพิ่ม isPermanent = true เพื่อให้ข้อความค้าง
+        showMessage('ระบบอยู่ในระหว่างการปรับปรุง กรุณารอประกาศจากฝ่ายที่เกี่ยวข้อง', 'error', true);
         document.getElementById('login-screen').style.display = 'none';
         document.getElementById('logout-btn').style.display = 'none';
     }
