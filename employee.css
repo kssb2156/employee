@@ -44,34 +44,34 @@ body {
 /* Header with logo and title */
 header {
     display: flex;
-    align-items: flex-start; /* ปรับการจัดวางให้ชิดด้านบน */
-    justify-content: center;
+    align-items: center; /* ปรับการจัดวางให้ตรงกลาง */
+    justify-content: flex-start; /* ชิดซ้าย */
     margin-bottom: 30px;
     position: relative;
-    text-align: center;
+    text-align: left;
 }
 
 .header-text {
     text-align: left;
-    margin-left: 15px; /* เพิ่มระยะห่างจากโลโก้ */
+    margin-left: 15px;
 }
 
 .main-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* ปรับขนาดฟอนต์ให้เล็กลง */
     font-weight: 600;
     color: var(--primary-color);
     margin: 0;
 }
 
 .payroll-date {
-    font-size: 1rem;
+    font-size: 0.9rem; /* ปรับขนาดฟอนต์ให้เล็กลง */
     color: #666;
-    margin-top: 5px; /* เพิ่มระยะห่างจากหัวข้อหลัก */
-    text-align: left; /* จัดข้อความให้ชิดซ้าย */
+    margin-top: 5px;
+    text-align: left;
 }
 
 .logo-icon {
-    font-size: 2.5rem;
+    font-size: 2.2rem; /* ปรับขนาดไอคอนให้เล็กลง */
     color: var(--primary-color);
 }
 
@@ -84,11 +84,11 @@ header {
     background-color: var(--error-color);
     border: none;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem; /* ปรับขนาดไอคอนในปุ่มให้เล็กลง */
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 45px;
-    height: 45px;
+    width: 40px; /* ลดความกว้าง */
+    height: 40px; /* ลดความสูง */
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -103,31 +103,31 @@ header {
 .card {
     background-color: #f9f9f9;
     border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 25px;
+    padding: 20px; /* ลด padding */
+    margin-bottom: 20px; /* ลด margin */
     border: 1px solid var(--border-color);
     text-align: center;
 }
 
 .card h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* ปรับขนาดฟอนต์ให้เล็กลง */
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* ลด margin */
 }
 
 /* Form inputs and buttons */
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 12px; /* ลด gap */
+    margin-bottom: 15px; /* ลด margin */
 }
 
 .form-group input {
-    padding: 15px;
+    padding: 12px; /* ลด padding */
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    font-size: 1.2rem;
+    font-size: 1rem; /* ปรับขนาดฟอนต์ให้เล็กลง */
     width: 100%;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
@@ -142,8 +142,8 @@ button {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 15px 25px;
-    font-size: 1.2rem;
+    padding: 12px 20px; /* ลด padding */
+    font-size: 1rem; /* ปรับขนาดฟอนต์ให้เล็กลง */
     font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
@@ -158,13 +158,13 @@ button:hover {
 
 /* Message and status display */
 #message-container {
-    padding: 15px;
+    padding: 12px; /* ลด padding */
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* ลด margin */
     text-align: center;
     font-weight: bold;
     display: none;
-    font-size: 1.1rem;
+    font-size: 0.9rem; /* ปรับขนาดฟอนต์ให้เล็กลง */
 }
 
 .message-success {
@@ -182,11 +182,11 @@ button:hover {
 .status-message {
     text-align: center;
     font-weight: 600;
-    margin-top: 25px;
-    margin-bottom: 20px;
-    padding: 15px;
+    margin-top: 20px; /* ลด margin */
+    margin-bottom: 15px; /* ลด margin */
+    padding: 12px; /* ลด padding */
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: 1rem; /* ปรับขนาดฟอนต์ให้เล็กลง */
 }
 
 .status-message.approved {
@@ -201,22 +201,22 @@ button:hover {
 
 /* Claim info box */
 #claim-info {
-    margin-top: 25px;
+    margin-top: 20px; /* ลด margin */
     text-align: left;
 }
 
 .info-box {
     background-color: #e9ecef;
     border-left: 5px solid var(--primary-color);
-    padding: 20px;
+    padding: 15px; /* ลด padding */
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px; /* ลด gap */
 }
 
 .info-box p {
-    font-size: 1.1rem;
+    font-size: 1rem; /* ปรับขนาดฟอนต์ให้เล็กลง */
 }
 
 .info-box strong {
