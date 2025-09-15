@@ -232,13 +232,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     if (systemStatus === 'Open') {
         if (loggedInEmployee) {
+            // ถ้ามีข้อมูลอยู่แล้ว ให้เปลี่ยนไปหน้าแสดงสถานะเลย
             const employeeData = JSON.parse(loggedInEmployee);
-            document.getElementById('employee-id').value = employeeData.id;
-            document.getElementById('employee-phone').value = employeeData.phone;
-            login();
+            showClaimScreen(employeeData);
+        } else {
+            // ถ้าไม่มีข้อมูล ให้แสดงหน้าล็อกอินตามปกติ
+            switchScreen('login-screen');
         }
     } else if (systemStatus === 'Close') {
-        // แก้ไขส่วนนี้: เพิ่ม isPermanent = true เพื่อให้ข้อความค้าง
         showMessage('ระบบอยู่ในระหว่างการปรับปรุง กรุณารอประกาศจากฝ่ายที่เกี่ยวข้อง', 'error', true);
         document.getElementById('login-screen').style.display = 'none';
         document.getElementById('logout-btn').style.display = 'none';
