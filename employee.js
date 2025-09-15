@@ -170,7 +170,7 @@ function logout() {
     document.getElementById('employee-id').value = '';
     document.getElementById('employee-phone').value = '';
     switchScreen('login-screen');
-    showMessage('ออกจากระบบสำเร็จ', 'success');
+    //showMessage('ออกจากระบบสำเร็จ', 'success');
 }
 
 // ฟังก์ชันสำหรับดึงวันที่จาก Google Sheets
@@ -239,4 +239,5 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('login-screen').style.display = 'none';
         document.getElementById('logout-btn').style.display = 'none';
     }
+
 });
