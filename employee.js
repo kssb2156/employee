@@ -11,11 +11,13 @@ function formatNumber(num) {
 function showMessage(message, type) {
     messageContainer.innerHTML = `<div class="message ${type}">${message}</div>`;
     messageContainer.style.display = 'block';
-    
-    // ลบส่วนนี้ออกเพื่อไม่ให้ข้อความหายไปเอง
-    // setTimeout(() => {
-    //     messageContainer.style.display = 'none';
-    // }, 5000);
+
+    // เพิ่มโค้ดส่วนนี้เพื่อตั้งเวลาให้ข้อความหายไป
+    if (type !== 'system-closed') { // ตรวจสอบว่าไม่ใช่ข้อความระบบปิด
+        setTimeout(() => {
+            messageContainer.style.display = 'none';
+        }, 2000); // 2000 มิลลิวินาที = 3 วินาที
+    }
 }
 
 // ฟังก์ชันสำหรับสลับหน้าจอ
@@ -170,7 +172,6 @@ function logout() {
     document.getElementById('employee-id').value = '';
     document.getElementById('employee-phone').value = '';
     switchScreen('login-screen');
-    //showMessage('ออกจากระบบสำเร็จ', 'success');
 }
 
 // ฟังก์ชันสำหรับดึงวันที่จาก Google Sheets
@@ -239,5 +240,4 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('login-screen').style.display = 'none';
         document.getElementById('logout-btn').style.display = 'none';
     }
-
 });
